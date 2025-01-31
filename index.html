@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Kanye West</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #no-button {
+            position: absolute;
+            transition: all 0.5s ease;
+        }
+        #gif-container {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my Kanye West?</h1>
+    <button id="yes-button" onclick="showGif()">Yes</button>
+    <button id="no-button" onmouseover="moveButton()">No</button>
+
+    <div id="gif-container">
+        <img src="https://media.giphy.com/media/example-kanye-happy.gif" alt="Happy Kanye">
+    </div>
+
+    <script>
+        function showGif() {
+            document.getElementById('gif-container').style.display = 'block';
+            document.getElementById('no-button').style.display = 'none';
+        }
+
+        function moveButton() {
+            const button = document.getElementById('no-button');
+            const x = Math.random() * (window.innerWidth - button.offsetWidth);
+            const y = Math.random() * (window.innerHeight - button.offsetHeight);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
